@@ -1,0 +1,12 @@
+<div class="container mt-3">
+  <h1>Lists - #index</h1>
+  <div class="cards">
+    <ul>
+      <% @lists.each do |list| %>
+        <li><%= list.name %></li>
+      <% end %>
+    </ul>
+    <div>
+      <p> <%= link_to "New List", new_list_path %></p>
+    </div>
+</div>

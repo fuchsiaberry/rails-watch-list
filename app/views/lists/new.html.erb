@@ -1,0 +1,10 @@
+<div>
+  <h1>Add a new list</h1>
+
+  <div>
+    <%= simple_form_for @list do |f| %>
+      <%= f.input :name %>
+      <%= f.submit 'Submit', class: 'btn btn-info mt-2' %>
+    <% end %>
+  </div>
+</div>
