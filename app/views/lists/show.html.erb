@@ -1,8 +1,23 @@
 <div class="container mt-3">
   <h1>List - #show</h1>
+  <br>
   <div class="cards">
-    <p>Your List:</p>
-    <p><%= @list.name %></p>
-    <p> <%= link_to 'home', lists_path %></p>
+    <h3>List: <%= @list.name %></h3>
+    <p><%= link_to 'home', lists_path %> - <%= link_to 'Add movie', new_list_bookmark_path(@list) %></p>
+  </div>
+  <br>
+  <h3>The movies in this list</h3>
+    <%# <ul> %>
+      <% @list.bookmarks.each do |bookmark| %>
+        <%# <li > %>
+          <div class="card-category" >
+            <%= bookmark.movie.title%> | rating: <%= bookmark.movie.rating%>
+            <%= link_to 'X', bookmark_path(bookmark), class: 'card-remove-link', data: { turbo_method: :delete, turbo_confirm: "Remove this list" } %>
+          </div>
+        <%# </li> %>
+      <% end %>
+    <%# </ul> %>
+  <div>
+
   </div>
 </div>

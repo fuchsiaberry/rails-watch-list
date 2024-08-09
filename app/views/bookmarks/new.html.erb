@@ -1,0 +1,11 @@
+<div>
+  <h1>Add a new Movie</h1>
+
+  <div>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.association :movie, collection: @movies %>
+      <%= f.input :comment %>
+      <%= f.submit 'Submit', class: 'btn btn-info mt-2' %>
+    <% end %>
+  </div>
+</div>
