@@ -7,7 +7,7 @@
     <% if @list.photo.attached? %>
       <%= cl_image_tag @list.photo.key, width: 400, height: 300, crop: :fill %>
     <% else %>
-      <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>
+      <%= image_tag 'https://plus.unsplash.com/premium_photo-1682125795272-4b81d19ea386?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmlsbSUyMHJvbGx8ZW58MHx8MHx8fDA%3D',  width: 400, height: 300, crop: :fill  %>
     <% end %>
   </div>
   <br>
