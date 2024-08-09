@@ -4,6 +4,11 @@
   <div class="cards">
     <h3>List: <%= @list.name %></h3>
     <p><%= link_to 'home', lists_path %> - <%= link_to 'Add movie', new_list_bookmark_path(@list) %></p>
+    <% if @list.photo.attached? %>
+      <%= cl_image_tag @list.photo.key, width: 400, height: 300, crop: :fill %>
+    <% else %>
+      <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>
+    <% end %>
   </div>
   <br>
   <h3>The movies in this list</h3>
@@ -13,7 +18,6 @@
           <div class="card-category" >
             <%= bookmark.movie.title%> | rating: <%= bookmark.movie.rating%>
             <img src="" alt="">
-            <%= cl_image_tag @movie.photo.key, width: 400, height: 300, crop: :fill %>
             <%= link_to 'X', bookmark_path(bookmark), class: 'card-remove-link', data: { turbo_method: :delete, turbo_confirm: "Remove this list" } %>
           </div>
         <%# </li> %>
